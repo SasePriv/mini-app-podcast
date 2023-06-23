@@ -1,19 +1,19 @@
-const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = (env, argv) => {
-  const isProduction = argv.mode === "production";
+  const isProduction = argv.mode === 'production';
   const isDevelopment = !isProduction;
 
   return {
-    entry: "./src/index.js",
+    entry: './src/index.jsx',
     output: {
-      path: path.resolve(__dirname, "dist"),
-      filename: "assets/js/[name].[contenthash:8].js",
-      publicPath: "/",
+      path: path.resolve(__dirname, 'dist'),
+      filename: 'assets/js/[name].[contenthash:8].js',
+      publicPath: '/',
     },
     module: {
       rules: [
@@ -21,51 +21,51 @@ module.exports = (env, argv) => {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
           use: {
-            loader: "babel-loader",
+            loader: 'babel-loader',
             options: {
               cacheDirectory: true,
               cacheCompression: false,
-              envName: isProduction ? "production" : "development",
+              envName: isProduction ? 'production' : 'development',
             },
           },
         },
         {
           test: /\.css$/,
           use: [
-            isProduction ? MiniCssExtractPlugin.loader : "style-loader",
-            "css-loader",
+            isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
+            'css-loader',
           ],
         },
         {
           test: /\.(png|jpg|gif)$/i,
-          type: "asset/resource",
+          type: 'asset/resource',
           generator: {
-            filename: "static/media/[name].[hash:8][ext]",
+            filename: 'static/media/[name].[hash:8][ext]',
           },
         },
         {
           test: /\.svg$/,
-          use: ["@svgr/webpack"],
+          use: ['@svgr/webpack'],
         },
         {
           test: /\.(eot|otf|ttf|woff|woff2)$/,
-          type: "asset/resource",
+          type: 'asset/resource',
           generator: {
-            filename: "static/media/[name].[hash:8][ext]",
+            filename: 'static/media/[name].[hash:8][ext]',
           },
         },
       ],
     },
     resolve: {
-      extensions: [".js", ".jsx"],
+      extensions: ['.js', '.jsx'],
     },
     plugins: [
       new MiniCssExtractPlugin({
-        filename: "assets/css/[name].[contenthash:8].css",
-        chunkFilename: "assets/css/[name].[contenthash:8].chunk.css",
+        filename: 'assets/css/[name].[contenthash:8].css',
+        chunkFilename: 'assets/css/[name].[contenthash:8].chunk.css',
       }),
       new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, "public/index.html"),
+        template: path.resolve(__dirname, 'public/index.html'),
         inject: true,
       }),
     ],
@@ -90,7 +90,7 @@ module.exports = (env, argv) => {
         new CssMinimizerPlugin(),
       ],
     },
-    devtool: isDevelopment ? "source-map" : false,
+    devtool: isDevelopment ? 'source-map' : false,
     devServer: {
       compress: true,
       historyApiFallback: true,
