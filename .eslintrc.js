@@ -38,5 +38,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'default-case': 'off',
     'class-methods-use-this': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react/jsx-uses-react': 'off',
   },
 };

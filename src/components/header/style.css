@@ -1,0 +1,58 @@
+.header {
+    width: 100%;
+}
+
+.header-content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-title {
+    margin: 0px;
+    color: #639abe;
+}
+
+.separator {
+    width: 100%;
+    height: 5px;
+    background-color: #e1e1e1;
+}
+
+.loader {
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+    position: relative;
+}
+
+.loader::after,
+.loader::before {
+    content: '';
+    box-sizing: border-box;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #639abe;
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation: animloader 2s linear infinite;
+}
+
+.loader::after {
+    animation-delay: 1s;
+}
+
+@keyframes animloader {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
