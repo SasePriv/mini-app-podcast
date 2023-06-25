@@ -21,6 +21,10 @@
     background-color: #e1e1e1;
 }
 
+.loader-container {
+    height: 45px;
+}
+
 .loader {
     width: 45px;
     height: 45px;
@@ -40,10 +44,6 @@
     left: 0;
     top: 0;
     animation: animloader 2s linear infinite;
-}
-
-.loader::after {
-    animation-delay: 1s;
 }
 
 @keyframes animloader {

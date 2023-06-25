@@ -40,5 +40,7 @@ module.exports = {
     'class-methods-use-this': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/jsx-uses-react': 'off',
+    'react/jsx-one-expression-per-line': 'off',
+    'react/require-default-props': 'off'
   },
 };

@@ -1,19 +1,25 @@
 import './style.css';
+import PropTypes from 'prop-types';
+import { Podcast } from '../../models/podcast';
 
-function PodcastCard() {
+function PodcastCard({ podcast }) {
   return (
     <div className="card">
       <img
         className="card-image"
-        src="https://rachelcorbett.com.au/wp-content/uploads/2018/07/How-to-design-a-great-podcast-logo.jpg"
+        src={podcast.image}
         alt="podcast-logo"
       />
       <div className="card-content">
-        <h3 className="card-title">Title</h3>
-        <p className="card-author">Author: NPR</p>
+        <h3 className="card-title">{podcast.title}</h3>
+        <p className="card-author">Author: {podcast.author}</p>
       </div>
     </div>
   );
 }
+
+PodcastCard.propTypes = {
+  podcast: PropTypes.instanceOf(Podcast)
+};
 
 export default PodcastCard;

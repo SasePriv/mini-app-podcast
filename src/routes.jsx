@@ -1,10 +1,10 @@
 import { createBrowserRouter } from 'react-router-dom';
 import PodcastList from './views/podcastList';
 
-const router = createBrowserRouter([
+const router = (setLoading) => createBrowserRouter([
   {
     path: '/',
-    element: <PodcastList />
+    element: <PodcastList setLoading={setLoading} />
   }
 ]);
 

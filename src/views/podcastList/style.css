@@ -6,4 +6,5 @@
     margin: 20px 0 0;
     justify-content: center;
     gap: 5%;
+    row-gap: 15px;
 }
