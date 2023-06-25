@@ -41,6 +41,8 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/jsx-uses-react': 'off',
     'react/jsx-one-expression-per-line': 'off',
-    'react/require-default-props': 'off'
+    'react/require-default-props': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off'
+
   },
 };

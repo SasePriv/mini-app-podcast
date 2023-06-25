@@ -1,0 +1,13 @@
+.podcast-detail {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10%;
+    row-gap: 25px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.podcast-detail-content {
+    flex: 1;
+}

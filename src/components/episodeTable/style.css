@@ -1,0 +1,45 @@
+.table-card {
+    background-color: white;
+    border-radius: 0.25rem;
+    box-shadow: 0px 0px 6px 3px rgba(0, 0, 0, 0.25);
+    margin-top: 30px;
+    padding: 20px;
+    overflow: scroll;
+    max-height: 620px;
+    overflow-x: hidden;
+}
+
+.table-card table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table-card table td, .table-card table thead th {
+    border: 1px solid #ddd;
+    border-right: 0;
+    border-left: 0;
+    padding: 12px 8px;
+}
+
+.table-card table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table-card table tbody tr:hover {
+    background-color: #ddd;
+}
+
+.table-card table tbody td {
+    cursor: pointer;
+}
+
+.table-card table thead th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    border: 0;
+}
+
+.title-row {
+    color: #639abe;
+}
