@@ -6,8 +6,10 @@ import './style.css';
 
 function EpisodeTable({ podcastEpisodeList, podcastId }) {
   const navigate = useNavigate();
-  const row = ({ trackName, releaseDate, trackTimeMillis }, onClick) => (
-    <tr key={releaseDate} onClick={onClick}>
+  const row = ({
+    trackName, releaseDate, trackTimeMillis, id
+  }, onClick) => (
+    <tr key={id} onClick={onClick}>
       <td className="title-row">{trackName.trim()}</td>
       <td>{formatDate(new Date(releaseDate))}</td>
       <td>{millisecondsToHHMMSS(trackTimeMillis)}</td>
@@ -38,7 +40,7 @@ function EpisodeTable({ podcastEpisodeList, podcastId }) {
 
 EpisodeTable.propTypes = {
   podcastEpisodeList: PropTypes.arrayOf(PropTypes.instanceOf(PodcastEpisode)),
-  podcastId: PropTypes.number
+  podcastId: PropTypes.number,
 };
 
 export default EpisodeTable;

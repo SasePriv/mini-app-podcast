@@ -1,0 +1,29 @@
+.podcast-filter {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-end;
+    margin: 10px;
+    align-items: center;
+}
+
+.podcast-filter-count {
+    background-color: #2a75b4;
+    color: #ffffff;
+    padding: 6px;
+    border-radius: 10px;
+    margin-right: 10px;
+
+}
+
+.podcast-filter-input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #e1e1e1;
+    outline: none;
+}
+
+.podcast-filter-input:focus {
+    border: 1px solid #639abe;
+
+}
