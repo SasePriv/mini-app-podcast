@@ -3,11 +3,14 @@ import EpisodesCount from '../../components/episodesCount';
 import EpisodeTable from '../../components/episodeTable';
 
 function EpisodesList() {
-  const [podcastDetail] = useOutletContext();
+  const { podcastDetail } = useOutletContext();
   return (
     <>
       <EpisodesCount count={podcastDetail.trackCount} />
-      <EpisodeTable podcastId={podcastDetail.id} podcastEpisodeList={podcastDetail.podcastEpisodeList} />
+      <EpisodeTable
+        podcastId={podcastDetail.id}
+        podcastEpisodeList={podcastDetail.podcastEpisodeList}
+      />
     </>
   );
 }

@@ -1,9 +1,11 @@
-import { useParams } from 'react-router-dom';
+import { useOutletContext, useParams } from 'react-router-dom';
+import EpisodeCard from '../../components/episodeCard';
 
 function Episode() {
   const { episodeId } = useParams();
+  const { episodesById } = useOutletContext();
   return (
-    <div>{episodeId}</div>
+    <EpisodeCard episode={episodesById[episodeId]} />
   );
 }
 
