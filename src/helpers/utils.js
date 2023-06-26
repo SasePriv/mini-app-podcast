@@ -18,3 +18,5 @@ export const formatDate = (date) => {
 
   return `${dd}/${mm}/${yyyy}`;
 };
+
+export const normalizeStr = (str) => str.toLowerCase().trim();
