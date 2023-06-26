@@ -10,6 +10,6 @@ export class Podcast extends Serializable {
   }
 
   static toInstance(props = {}) {
-    return new Podcast(props.id.attributes['im:id'], props.title.label, props['im:image'][0].label, props['im:artist'].label);
+    return new Podcast(props.id.attributes['im:id'], props.title.label, props['im:image'][props['im:image'].length - 1].label, props['im:artist'].label);
   }
 }
