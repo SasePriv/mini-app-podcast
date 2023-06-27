@@ -7,6 +7,7 @@ import PodcastList from './views/podcastList';
 import PodcastDetail from './views/podcastDetail';
 import EpisodesList from './views/episodesList';
 import Episode from './views/episode';
+import NotFound from './views/notFound';
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -20,6 +21,7 @@ function App() {
             <Route path=":podcastId" element={<EpisodesList />} />
             <Route path=":podcastId/episode/:episodeId" element={<Episode />} />
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>

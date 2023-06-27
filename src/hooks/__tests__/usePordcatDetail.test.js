@@ -11,6 +11,10 @@ jest.mock('../../helpers/cacheFetchController', () => ({
   })),
 }));
 
+jest.mock('react-router-dom', () => ({
+  useNavigate: jest.fn()
+}));
+
 describe('usePodcastDetail', () => {
   it('returns the podcastDetail when successfully fetched', async () => {
     const podcastId = '1';
