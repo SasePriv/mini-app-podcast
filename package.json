@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
+    "build:serve": "webpack --mode production && http-server dist",
     "start": "webpack serve --mode development"
   },
   "repository": {
@@ -49,6 +50,7 @@
   "dependencies": {
     "@babel/eslint-parser": "^7.22.5",
     "fast-xml-parser": "^4.2.5",
+    "http-server": "^14.1.1",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
