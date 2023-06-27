@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import {
-  RouterProvider, Routes, BrowserRouter, Route
+  Routes, BrowserRouter, Route
 } from 'react-router-dom';
 import Header from './components/header';
-import router from './routes';
 import PodcastList from './views/podcastList';
 import PodcastDetail from './views/podcastDetail';
 import EpisodesList from './views/episodesList';
@@ -21,7 +20,6 @@ function App() {
             <Route path=":podcastId" element={<EpisodesList />} />
             <Route path=":podcastId/episode/:episodeId" element={<Episode />} />
           </Route>
-          {/* <RouterProvider router={router(setLoading)} /> */}
         </Routes>
       </BrowserRouter>
     </div>

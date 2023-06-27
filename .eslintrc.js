@@ -2,8 +2,13 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    'jest/globals': true
   },
-  extends: 'airbnb',
+  extends: [
+    'plugin:react/recommended',
+    'plugin:jest/recommended',
+    'airbnb',
+  ],
   overrides: [
     {
       env: {
@@ -28,6 +33,7 @@ module.exports = {
       configFile: './babel.config.js'
     }
   },
+  plugins: ['jest'],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
