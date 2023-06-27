@@ -75,5 +75,4 @@ npm test
 
 ## To do
 
-* Sort the list of planets by name, diameter, climate, terrain or population.
-* Adding more test cases
+* Adding more unit test
