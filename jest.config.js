@@ -7,7 +7,6 @@ module.exports = {
   transform: {
     '^.+\\.jsx?$': 'babel-jest'
   },
-  babelConfig: true,
   moduleNameMapper: {
     '\\.(css|less)$': '<rootDir>/test/jest/__mocks__/styleMock.js',
   }
