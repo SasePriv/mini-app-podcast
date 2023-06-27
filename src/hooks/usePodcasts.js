@@ -1,35 +1,18 @@
 import { useEffect, useState } from 'react';
 import { Podcast } from '../models/podcast';
-import { LocalStorageController } from '../helpers/localStorage';
+import { CacheFetchController } from '../helpers/cacheFetchController';
 
 export const usePodcasts = (setLoading) => {
   const [podcasts, setPodcasts] = useState([]);
-
-  const validCache = () => {
-    if (LocalStorageController.podcastList) {
-      return LocalStorageController.isValidTimeStamp(LocalStorageController.podcastList.timestamp);
-    }
-    return false;
-  };
-
-  const apiCall = async () => {
-    const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent('https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json')}`);
-    if (!response.ok) {
-      const message = `An error has occurred while getting the podcast information: ${response.status}`;
-      setLoading(false);
-      throw new Error(message);
-    }
-    const data = await response.json();
-    LocalStorageController.podcastList = data;
-    return data;
-  };
+  const cacheFetch = new CacheFetchController();
 
   const fetchPodcasts = async () => {
     setLoading(true);
-    const response = validCache() ? LocalStorageController.podcastList.value : await apiCall();
+    const key = 'podcastList';
+    const response = await cacheFetch.fetchCache(key, `https://cors-anywhere.herokuapp.com/${'https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json'}`);
     const data = await response;
-    const content = JSON.parse(data.contents);
-    const listPodcast = Podcast.toInstanceList(content.feed.entry);
+    const { feed } = data;
+    const listPodcast = Podcast.toInstanceList(feed.entry);
     setPodcasts(listPodcast);
     setLoading(false);
   };

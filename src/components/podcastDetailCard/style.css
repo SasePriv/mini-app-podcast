@@ -15,6 +15,7 @@
 
 .detail-card-header img {
     width: 100%;
+    cursor: pointer;
 }
 
 .detail-card-title-content, .detail-card-description-content {
@@ -23,8 +24,13 @@
 
 .detail-card-description, .detail-card-author {
     font-style: italic;
+    font-size: 15px;
 }
 
 .detail-card-title, .detail-card-description-label {
     font-weight: bold;
+}
+
+.detail-card-title {
+    cursor: pointer;
 }

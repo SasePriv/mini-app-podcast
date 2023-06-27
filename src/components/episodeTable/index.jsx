@@ -1,18 +1,18 @@
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import { PodcastEpisode } from '../../models/podcastEpisode';
-import { millisecondsToHHMMSS, formatDate } from '../../helpers/utils';
+import { formatDate } from '../../helpers/utils';
 import './style.css';
 
 function EpisodeTable({ podcastEpisodeList, podcastId }) {
   const navigate = useNavigate();
   const row = ({
-    trackName, releaseDate, trackTimeMillis, id
+    title, releaseDate, duration, id
   }, onClick) => (
     <tr key={id} onClick={onClick}>
-      <td className="title-row">{trackName.trim()}</td>
+      <td className="title-row">{title.trim()}</td>
       <td>{formatDate(new Date(releaseDate))}</td>
-      <td>{millisecondsToHHMMSS(trackTimeMillis)}</td>
+      <td>{duration}</td>
     </tr>
   );
 
@@ -40,7 +40,7 @@ function EpisodeTable({ podcastEpisodeList, podcastId }) {
 
 EpisodeTable.propTypes = {
   podcastEpisodeList: PropTypes.arrayOf(PropTypes.instanceOf(PodcastEpisode)),
-  podcastId: PropTypes.number,
+  podcastId: PropTypes.string,
 };
 
 export default EpisodeTable;

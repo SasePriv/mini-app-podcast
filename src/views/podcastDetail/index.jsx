@@ -10,7 +10,7 @@ function PodcastDetail({ setLoading }) {
   const { podcastDetail } = usePodcastDetail({ podcastId, setLoading });
 
   const episodesById = useMemo(
-    () => podcastDetail?.episodeMapById,
+    () => podcastDetail?.podcastEpisodeByID,
     [podcastDetail]
   );
 
