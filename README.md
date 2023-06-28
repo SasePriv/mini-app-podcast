@@ -74,6 +74,14 @@ Run the following command
 npm test
 ```
 
+## How to execute the linting
+
+Run the following command
+
+```bash
+npm run lint
+```
+
 ## To do
 
 * Adding more unit test
