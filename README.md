@@ -51,7 +51,8 @@ npm run build:serve
 
 This will start the application in local.
 
-2. You will have to visit http://127.0.0.1:8081/.
+2. Normally you will have to visit the following path http://127.0.0.1:8080/ but if it does not work, then look in the
+   terminal where the command was executed where it will tell you on which port it will be available
 
 3. Enjoy exploring the mini-app-podcast!
 
