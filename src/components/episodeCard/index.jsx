@@ -1,13 +1,17 @@
 import PropTypes from 'prop-types';
+import dompurify from 'dompurify';
 import { PodcastEpisode } from '../../models/podcastEpisode';
 import './style.css';
 
 function EpisodeCard({ episode }) {
+  const sanitizer = dompurify.sanitize;
   return (
-    <div className="espisode-card">
+    <div className="episode-card">
       <h2 className="episode-card-title">{episode.title}</h2>
-      {/* eslint-disable-next-line react/no-danger */}
-      <div className="episode-card-description" dangerouslySetInnerHTML={{ __html: episode.description }} />
+      <div
+        className="episode-card-description"
+        dangerouslySetInnerHTML={{ __html: sanitizer(episode.description) }}
+      />
       <audio controls className="audio" data-testid="episode-audio">
         <source src={episode.episodeUrl} type="audio/mpeg" />
         Your browser does not support the audio element.

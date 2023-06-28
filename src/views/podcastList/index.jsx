@@ -4,7 +4,7 @@ import { useState } from 'react';
 import PodcastCard from '../../components/podcastCard';
 import { usePodcasts } from '../../hooks/usePodcasts';
 import { usePodcastFilter } from '../../hooks/usePodcastFilter';
-import PodcatFilter from '../../components/podcatFilter';
+import PodcastFilter from '../../components/podcastFilter';
 import './style.css';
 
 function PodcastList({ setLoading }) {
@@ -19,7 +19,7 @@ function PodcastList({ setLoading }) {
 
   return (
     <div className="grid-layout">
-      <PodcatFilter count={filteredPodcastList.length} onChangeSearch={setSearch} />
+      <PodcastFilter count={filteredPodcastList.length} onChangeSearch={setSearch} />
       {filteredPodcastList.map((podcast) => (
         <div tabIndex={0} role="button" key={podcast.id} onClick={() => handleClick(`/podcast/${podcast.id}`)}>
           <PodcastCard podcast={podcast} />

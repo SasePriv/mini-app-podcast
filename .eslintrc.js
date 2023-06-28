@@ -33,7 +33,7 @@ module.exports = {
       configFile: './babel.config.js'
     }
   },
-  plugins: ['jest'],
+  plugins: ['jest', 'jam3'],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
@@ -50,7 +50,13 @@ module.exports = {
     'react/require-default-props': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/media-has-caption': 'off',
-    'jsx-a11y/no-noninteractive-element-interactions': 'off'
-
+    'jsx-a11y/no-noninteractive-element-interactions': 'off',
+    'react/no-danger': 'off',
+    'jam3/no-sanitizer-with-danger': [
+      2,
+      {
+        wrapperName: ['sanitizer']
+      }
+    ]
   },
 };
